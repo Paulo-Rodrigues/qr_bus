@@ -1,0 +1,9 @@
+<%= link_to 'Criar nova rota', new_bus_line_path %>
+<% @bus_lines.each do |line| %>
+  <%= line.from %>
+  <%= line.to %>
+<% end %>
+
+<% if @bus_lines.blank? %>
+  <%= render 'bus_lines/empty_state/empty_state' %>
+<% end %>

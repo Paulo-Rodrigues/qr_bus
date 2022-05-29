@@ -1,0 +1,5 @@
+<%= link_to 'Editar essa rota', edit_bus_line_path(@bus_line) %>
+<%= link_to 'Delete essa rota', bus_line_path(@bus_line), data: { turbo_method: :delete } %>
+<%= @bus_line.from %>
+<%= @bus_line.to %>
+<%= @bus_line.name %>

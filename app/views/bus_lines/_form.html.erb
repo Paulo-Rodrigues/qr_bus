@@ -1,0 +1,10 @@
+<%= form_with(model: @bus_line) do |form| %>
+  <%= form.label :name, 'Nome da linha:' %>
+  <%= form.text_field :name %>
+  <%= form.label :from, 'De:' %>
+  <%= form.text_field :from %>
+  <%= form.label :to, 'Para:' %>
+  <%= form.text_field :to %>
+
+  <%= form.submit 'Enviar' %>
+<% end %>
