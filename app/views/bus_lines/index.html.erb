@@ -1,8 +1,25 @@
 <%= link_to 'Criar nova rota', new_bus_line_path %>
-<% @bus_lines.each do |line| %>
-  <%= line.from %>
-  <%= line.to %>
-<% end %>
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Linha</th>
+      <th>De</th>
+      <th>Para</th>
+      <th>Detalhes</th>
+    </tr>
+  </thead>
+  <% @bus_lines.each do |line| %>
+    <tbody>
+      <tr>
+        <td><%= line.name %></td>
+        <td><%= line.from %></td>
+        <td><%= line.to %></td>
+        <td>BTN</td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
 
 <% if @bus_lines.blank? %>
   <%= render 'bus_lines/empty_state/empty_state' %>
