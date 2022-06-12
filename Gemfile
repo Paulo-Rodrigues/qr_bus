@@ -17,6 +17,8 @@ gem "image_processing", "~> 1.2"
 
 gem 'devise'
 
+gem 'rack-cors'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'

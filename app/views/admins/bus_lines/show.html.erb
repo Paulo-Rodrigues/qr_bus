@@ -19,24 +19,32 @@
     </div>
   </div>
   <div class="dashboard-line_tracking">
-    <table>
+    <h1 class="center-align white-text">HORÁRIOS</h1>
+    <table class="highlight">
       <tbody>
-        <tr>
-          <td>Alvin</td>
-          <td>Eclair</td>
-          <td>$0.87</td>
-        </tr>
-        <tr>
-          <td>Alan</td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-        </tr>
-        <tr>
-          <td>Jonathan</td>
-          <td>Lollipop</td>
-          <td>$7.00</td>
-        </tr>
+        <% @bus_line.bustracks.each do |track| %>
+          <tr>
+            <td><%= track.start_time %></td>
+            <td><%= track.end_time%></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
+    <div class="dashboard-line_tracking_form">
+      <div class="row">
+        <div class="col s12">
+          horário:
+          <div class="input-field inline">
+            <%= form_with model: [:admins, @bus_line, @bus_line.bustracks.build ] do |f| %>
+              <%= f.label :start_time %>
+              <%= f.text_field :start_time %>
+              <%= f.label :end_time %>
+              <%= f.text_field :end_time %>
+              <%= f.submit 'Adiciona', class: 'btn' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

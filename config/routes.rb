@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   namespace :admins do
     get 'dashboard', to: 'dashboard#show'
-    resources :bus_lines
+    resources :bus_lines do
+      resources :bustracks, only: %i[ create ]
+    end
   end
 
   resources :bus_lines

@@ -1,5 +1,5 @@
 class BusLinesController < ApplicationController
-  before_action :find_bus, only: %i[ show ]
+  # before_action :find_bus, only: %i[ show ]
 
   def index
     @bus_lines = BusLine.all
@@ -10,6 +10,6 @@ class BusLinesController < ApplicationController
   def show
     @bus_line = BusLine.find(params[:id])
 
-    render json: @bus_line, status: :ok
+    render json: { bus_line: @bus_line, bustracks: @bus_line.bustracks }, status: :ok
   end
 end
