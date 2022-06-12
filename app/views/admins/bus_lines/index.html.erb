@@ -1,0 +1,28 @@
+<section class="dashboard-lines">
+  <section class="dashboard-lines_header">
+    <%= link_to 'Nova Linha', new_admins_bus_line_path, class: 'btn' %>
+    <%= link_to "Voltar", admins_dashboard_path, class: 'btn' %>
+  </section>
+
+  <% if @bus_lines.blank? %>
+    <%= render 'admins/bus_lines/empty_state/empty_state' %>
+  <% end %>
+
+  <section class="dashboard-lines_body">
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Linhas Atuais</h4></li>
+    <% @bus_lines.each do |line| %>
+      <li class="collection-item">
+        <div>
+          <%= line.from %>
+          <br>
+          Até
+          <br>
+          <%= line.to %>
+          <%= link_to 'Detalhes', admins_bus_line_path(line), class: "secondary-content" %>>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+</section>

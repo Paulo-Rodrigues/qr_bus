@@ -18,6 +18,7 @@ gem "image_processing", "~> 1.2"
 gem 'devise'
 
 group :development, :test do
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'capybara'

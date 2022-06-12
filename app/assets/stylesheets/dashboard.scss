@@ -1,0 +1,40 @@
+.dashboard {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.dashboard-menu {
+  grid-column: 1 / 2;
+  border-right: 2px solid rgb(27, 27, 27);
+}
+
+.dashboard-menu_logo {
+  margin-left: 6rem;
+}
+
+.dashboard-menu_links {
+  li {
+    background-color: rgb(27, 27, 27);
+    margin: 1rem 1rem;
+    padding: 1rem;
+    border-radius: 25px;
+    text-align: center;
+  }
+}
+
+.dashboard-body {
+  grid-column: 2 / 3;
+}
+
+.dashboard-body_logo {
+  margin: 3rem;
+}
+
+.dashboard-lines_body {
+  margin: 5rem 20%;
+}
+
+.dashboard-line_show {
+  margin: 5rem 10%;
+}
